@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://www.moneygram.com/RealTimeEP" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://www.moneygram.com/RealTimeEP" />
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidationRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="s1:ValidationRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidationRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidationRequestResult" type="s1:ValidationResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="s1:LoadRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadRequestResult" type="s1:LoadResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.moneygram.com/RealTimeEP">
+      <s:complexType name="ValidationRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="processDateTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="receiveAgentId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="receiveCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="receiveISOCurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="receiveISOCountry" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiveAccountNumber" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sendISOCurrency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sendISOCountry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sendFxRate" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="sendAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="feeAmount" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiveAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="senderFirstName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderMiddleName" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="senderLastName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderAddress1" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderAddress2" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderCity" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderStateProvince" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderCountry" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderZipPostalCode" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderPhoneNumber" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderDateOfBirth" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderPhotoIdType" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderPhotoIdNumber" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderPhotoIdStateProvince" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderPhotoIdCountry" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderLegalIdType" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderLegalIdNumber" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiverFirstName" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiverMiddleName" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiverLastName" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiveAccountNumberExpStr" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="receiveAccountSwipe" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="purposeOfFunds" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidationResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="valid" type="s1:ValidType" />
+          <s:element minOccurs="1" maxOccurs="1" name="partnerTransactionID" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="mgiErrorCode" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="customErrorParams" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiptCode" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="customReceiptParams" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="partnerErrorCode" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="message" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ValidType">
+        <s:restriction base="s:string">
+          <s:enumeration value="PASS" />
+          <s:enumeration value="FAIL" />
+          <s:enumeration value="ERROR" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="LoadRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="receiveAgentId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="receiveCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="referenceNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="sendDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiveISOCurrency" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiveISOCountry" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiveAccountNumber" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="sendISOCurrency" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="sendISOCountry" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sendFxRate" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="sendAmount" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="feeAmount" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiveAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="senderFirstName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderMiddleName" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="senderLastName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderAddress1" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderAddress2" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderCity" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderStateProvince" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderCountry" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderZipPostalCode" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderPhoneNumber" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderDateOfBirth" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderPhotoIdType" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderPhotoIdNumber" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderPhotoIdStateProvince" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderPhotoIdCountry" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderLegalIdType" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="senderLegalIdNumber" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiverFirstName" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiverMiddleName" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiverLastName" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiveAccountNumberExpStr" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="receiveAccountSwipe" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="purposeOfFunds" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LoadResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="valid" type="s1:ValidType" />
+          <s:element minOccurs="1" maxOccurs="1" name="partnerTransactionID" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="mgiErrorCode" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="customErrorParams" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="receiptCode" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="unbounded" name="customReceiptParams" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bpgErrorCode" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="partnerErrorCode" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="message" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidationRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidationRequest" />
+  </wsdl:message>
+  <wsdl:message name="ValidationRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidationRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadRequest" />
+  </wsdl:message>
+  <wsdl:message name="LoadRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadRequestResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MGISoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidationRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Money Gram Validation Request</wsdl:documentation>
+      <wsdl:input message="tns:ValidationRequestSoapIn" />
+      <wsdl:output message="tns:ValidationRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Money Gram Load Request</wsdl:documentation>
+      <wsdl:input message="tns:LoadRequestSoapIn" />
+      <wsdl:output message="tns:LoadRequestSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MGISoap" type="tns:MGISoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidationRequest">
+      <soap:operation soapAction="http://tempuri.org/ValidationRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadRequest">
+      <soap:operation soapAction="http://tempuri.org/LoadRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MGISoap12" type="tns:MGISoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidationRequest">
+      <soap12:operation soapAction="http://tempuri.org/ValidationRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadRequest">
+      <soap12:operation soapAction="http://tempuri.org/LoadRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MGI">
+    <wsdl:port name="MGISoap" binding="tns:MGISoap">
+      <soap:address location="http://dev-mgi-api.azurewebsites.net/mgi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MGISoap12" binding="tns:MGISoap12">
+      <soap12:address location="http://dev-mgi-api.azurewebsites.net/mgi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
